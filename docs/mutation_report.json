@@ -1,0 +1,1190 @@
+{
+  "C01": {
+    "desc": "HTTP 500 treated as external",
+    "detail": "tests/direct/test_flow.py::test_every_5xx_is_transient[500]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C02": {
+    "desc": "redirects accepted as a final answer",
+    "detail": "tests/direct/test_flow.py::test_a_redirect_status_is_not_followed_or_trusted",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C03": {
+    "desc": "5xx classed as external",
+    "detail": "tests/direct/test_flow.py::test_http_503_reverts_as_transient",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C04": {
+    "desc": "4xx classed as transient",
+    "detail": "tests/direct/test_flow.py::test_http_404_reverts_as_external_and_changes_nothing",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C05": {
+    "desc": "network failure classed as external",
+    "detail": "tests/direct/test_flow.py::test_unreachable_host_reverts_as_transient",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C06": {
+    "desc": "empty body not handled",
+    "detail": "tests/direct/test_flow.py::test_empty_response_body_is_a_hash_mismatch_not_a_crash",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C07": {
+    "desc": "size check before hashing removed",
+    "detail": "tests/direct/test_flow.py::test_oversized_page_is_reported_as_too_large_even_when_the_hash_also_differs",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C08": {
+    "desc": "hash not verified",
+    "detail": "tests/direct/test_flow.py::test_changed_page_is_a_recorded_hash_mismatch",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C09": {
+    "desc": "hash problem blames entry A",
+    "detail": "tests/direct/test_flow.py::test_hash_mismatch_exhausts_after_three_attempts_and_frees_the_slot",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C10": {
+    "desc": "decode problem has a fixed code",
+    "detail": "tests/direct/test_flow.py::test_unreadable_entry_is_a_recorded_problem_with_its_code[\\xef\\xbb\\xbfTake",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C11": {
+    "desc": "model asked even when a fact is missing in only one entry",
+    "detail": "tests/direct/test_fixtures.py::test_scenario_end_to_end[dropped_limit]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C12": {
+    "desc": "model asked only in one order",
+    "detail": "tests/direct/test_fixtures.py::test_scenario_end_to_end[clear_vs_dense]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C13": {
+    "desc": "second order is not swapped",
+    "detail": "tests/direct/test_flow.py::test_position_bias_is_caught_as_order_dependent",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C14": {
+    "desc": "texts are never swapped in the prompt",
+    "detail": "tests/direct/test_fixtures.py::test_scenario_end_to_end[clear_vs_dense]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C15": {
+    "desc": "answer not mapped back for the swapped order",
+    "detail": "tests/direct/test_fixtures.py::test_scenario_end_to_end[clear_vs_dense]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C16": {
+    "desc": "quote not verified in the round",
+    "detail": "tests/direct/test_flow.py::test_fake_quote_is_not_a_win_and_is_retried",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C17": {
+    "desc": "model trouble classed as a business error",
+    "detail": "tests/direct/test_flow.py::test_malformed_model_answer_reverts_as_llm_error[answer0]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C18": {
+    "desc": "the same quote reused for both orders",
+    "detail": "tests/direct/test_flow.py::test_each_order_keeps_its_own_quote",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C19": {
+    "desc": "deterministic errors agree without comparing",
+    "detail": "tests/direct/test_validator.py::test_leader_error_handling[[EXTERNAL]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C20": {
+    "desc": "transient needs only one side",
+    "detail": "tests/direct/test_validator.py::test_leader_error_handling[[EXTERNAL]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C21": {
+    "desc": "model errors agree",
+    "detail": "tests/direct/test_validator.py::test_leader_error_handling[[EXTERNAL]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C22": {
+    "desc": "leader failed but validator succeeded still agrees",
+    "detail": "tests/direct/test_validator.py::test_leader_error_handling[[EXTERNAL]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C23": {
+    "desc": "unexpected validator crash agrees",
+    "detail": "tests/direct/test_validator.py::test_leader_error_and_a_validator_that_crashes_outside_the_contract_rules_disagree",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C24": {
+    "desc": "external errors not compared exactly",
+    "detail": "tests/direct/test_validator.py::test_leader_error_handling[[EXTERNAL]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C25": {
+    "desc": "label maximum off by one",
+    "detail": "tests/direct/test_flow.py::test_open_contest_boundary_label_length",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C26": {
+    "desc": "empty label accepted",
+    "detail": "tests/direct/test_flow.py::test_open_contest_rejects_bad_label[-LABEL_LENGTH]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C27": {
+    "desc": "label not stripped",
+    "detail": "tests/direct/test_flow.py::test_open_contest_stores_what_it_was_given",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C28": {
+    "desc": "fact errors lose their code",
+    "detail": "tests/direct/test_flow.py::test_open_contest_rejects_bad_facts[not",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C29": {
+    "desc": "open limit off by one",
+    "detail": "tests/direct/test_flow.py::test_open_limit_per_organizer_and_slot_release",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C30": {
+    "desc": "contest ids skip",
+    "detail": "tests/direct/test_flow.py::test_ids_increase_and_stats_count_contests",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C31": {
+    "desc": "opening does not take a slot",
+    "detail": "tests/direct/test_flow.py::test_open_limit_per_organizer_and_slot_release",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C32": {
+    "desc": "facts stored as typed, not normalised",
+    "detail": "tests/direct/test_flow.py::test_open_contest_stores_what_it_was_given",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C33": {
+    "desc": "new contest not open",
+    "detail": "tests/direct/test_fixtures.py::test_scenario_end_to_end[clear_vs_dense]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C34": {
+    "desc": "prize not stored",
+    "detail": "tests/direct/test_flow.py::test_open_contest_stores_what_it_was_given",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C35": {
+    "desc": "first contest id is 0",
+    "detail": "tests/direct/test_flow.py::test_open_contest_stores_what_it_was_given",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C36": {
+    "desc": "releasing a slot does nothing",
+    "detail": "tests/direct/test_flow.py::test_open_limit_per_organizer_and_slot_release",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C37": {
+    "desc": "release can go below zero",
+    "detail": "",
+    "equivalent": "every release pairs with an earlier increment in open_contest, so count is always at least 1 when release runs; the guard is a defensive floor",
+    "outcome": "SURVIVED"
+  },
+  "C38": {
+    "desc": "entries accepted into closed contests",
+    "detail": "tests/direct/test_flow.py::test_withdrawn_contest_is_closed",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C39": {
+    "desc": "third entry accepted",
+    "detail": "tests/direct/test_flow.py::test_third_entry_is_rejected",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C40": {
+    "desc": "full only when B is filled",
+    "detail": "",
+    "equivalent": "slot B is only ever filled after slot A, so b_filled already implies a_filled",
+    "outcome": "SURVIVED"
+  },
+  "C41": {
+    "desc": "bad URLs accepted",
+    "detail": "tests/direct/test_flow.py::test_bad_url_is_rejected[http://raw.example.com/a.txt]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C42": {
+    "desc": "digest not lower-cased",
+    "detail": "tests/direct/test_flow.py::test_uppercase_sha_is_normalised",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C43": {
+    "desc": "digest not stripped",
+    "detail": "tests/direct/test_flow.py::test_digest_with_surrounding_spaces_is_accepted_and_stored_clean",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C44": {
+    "desc": "bad digests accepted",
+    "detail": "tests/direct/test_flow.py::test_bad_sha_is_rejected[]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C45": {
+    "desc": "duplicate content accepted",
+    "detail": "tests/direct/test_flow.py::test_duplicate_hash_or_url_is_rejected",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C46": {
+    "desc": "duplicate address accepted",
+    "detail": "tests/direct/test_flow.py::test_duplicate_hash_or_url_is_rejected",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C47": {
+    "desc": "second entry overwrites slot A",
+    "detail": "tests/direct/test_fixtures.py::test_scenario_end_to_end[clear_vs_dense]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C48": {
+    "desc": "second entry URL stored in slot A",
+    "detail": "tests/direct/test_fixtures.py::test_scenario_end_to_end[clear_vs_dense]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C49": {
+    "desc": "second entry digest stored in slot A",
+    "detail": "tests/direct/test_fixtures.py::test_scenario_end_to_end[clear_vs_dense]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C50": {
+    "desc": "second slot never marked filled",
+    "detail": "tests/direct/test_fixtures.py::test_scenario_end_to_end[clear_vs_dense]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C51": {
+    "desc": "anyone can withdraw",
+    "detail": "tests/direct/test_flow.py::test_only_the_organizer_can_withdraw",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C52": {
+    "desc": "withdraw works on closed contests",
+    "detail": "tests/direct/test_flow.py::test_withdrawn_contest_is_closed",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C53": {
+    "desc": "withdraw sets the wrong status",
+    "detail": "tests/direct/test_flow.py::test_only_the_organizer_can_withdraw",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C54": {
+    "desc": "withdraw keeps the slot",
+    "detail": "tests/direct/test_flow.py::test_open_limit_per_organizer_and_slot_release",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C55": {
+    "desc": "judging a closed contest allowed",
+    "detail": "tests/direct/test_flow.py::test_withdrawn_contest_is_closed",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C56": {
+    "desc": "judging without entries allowed",
+    "detail": "tests/direct/test_flow.py::test_judge_needs_both_entries",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C57": {
+    "desc": "one entry is enough to judge",
+    "detail": "tests/direct/test_flow.py::test_judge_needs_both_entries",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C58": {
+    "desc": "anyone can trigger a judgement",
+    "detail": "tests/direct/test_flow.py::test_judge_is_for_participants_only",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C59": {
+    "desc": "entrant B cannot trigger a judgement",
+    "detail": "tests/direct/test_flow.py::test_judge_is_for_participants_only",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C60": {
+    "desc": "organizer cannot trigger a judgement",
+    "detail": "tests/direct/test_fixtures.py::test_scenario_end_to_end[clear_vs_dense]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C61": {
+    "desc": "validator trusts a leader that errored",
+    "detail": "tests/direct/test_validator.py::test_leader_error_handling[[EXTERNAL]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C62": {
+    "desc": "leader errors always disagree",
+    "detail": "tests/direct/test_validator.py::test_leader_error_handling[[EXTERNAL]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C63": {
+    "desc": "validator failure agrees",
+    "detail": "tests/direct/test_validator.py::test_validator_whose_model_returns_garbage_disagrees",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C64": {
+    "desc": "validator accepts any leader result",
+    "detail": "tests/direct/test_validator.py::test_leader_cannot_flip_the_verdict",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C65": {
+    "desc": "problem attempts are not counted",
+    "detail": "tests/direct/test_flow.py::test_changed_page_is_a_recorded_hash_mismatch",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C66": {
+    "desc": "problem is not recorded",
+    "detail": "tests/direct/test_flow.py::test_changed_page_is_a_recorded_hash_mismatch",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C67": {
+    "desc": "problems never exhaust the contest",
+    "detail": "tests/direct/test_flow.py::test_hash_mismatch_exhausts_after_three_attempts_and_frees_the_slot",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C68": {
+    "desc": "exhausted contest keeps its slot",
+    "detail": "tests/direct/test_flow.py::test_hash_mismatch_exhausts_after_three_attempts_and_frees_the_slot",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C69": {
+    "desc": "a problem falls through to the result code",
+    "detail": "tests/direct/test_flow.py::test_changed_page_is_a_recorded_hash_mismatch",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C70": {
+    "desc": "malformed result is stored",
+    "detail": "",
+    "equivalent": "consensus already requires every validator to accept only well-formed results (rounds_agree calls result_is_well_formed on both sides), so a malformed outcome cannot reach this line; it is a second guard",
+    "outcome": "SURVIVED"
+  },
+  "C71": {
+    "desc": "UNDETERMINED recorded on the first attempt",
+    "detail": "tests/direct/test_flow.py::test_fake_quote_is_not_a_win_and_is_retried",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C72": {
+    "desc": "UNDETERMINED attempts not counted",
+    "detail": "tests/direct/test_flow.py::test_fake_quote_is_not_a_win_and_is_retried",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C73": {
+    "desc": "UNDETERMINED retried one time too many",
+    "detail": "tests/direct/test_flow.py::test_unclear_answer_is_retried_then_recorded_after_three_attempts",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C74": {
+    "desc": "UNDETERMINED never retried",
+    "detail": "tests/direct/test_flow.py::test_fake_quote_is_not_a_win_and_is_retried",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C75": {
+    "desc": "last_problem not cleared after a good result",
+    "detail": "tests/direct/test_flow.py::test_a_retry_can_still_succeed",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C76": {
+    "desc": "status not set to JUDGED",
+    "detail": "tests/direct/test_fixtures.py::test_scenario_end_to_end[clear_vs_dense]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C77": {
+    "desc": "verdict not stored",
+    "detail": "tests/direct/test_fixtures.py::test_scenario_end_to_end[clear_vs_dense]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C78": {
+    "desc": "reason not stored",
+    "detail": "tests/direct/test_fixtures.py::test_scenario_end_to_end[clear_vs_dense]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C79": {
+    "desc": "missing list of A not stored",
+    "detail": "tests/direct/test_fixtures.py::test_scenario_end_to_end[dropped_limit]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C80": {
+    "desc": "missing list of B not stored",
+    "detail": "tests/direct/test_flow.py::test_other_entry_dropping_a_fact_gives_a_the_win",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C81": {
+    "desc": "first quote not stored",
+    "detail": "tests/direct/test_flow.py::test_a_wins_consistently",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C82": {
+    "desc": "second quote not stored",
+    "detail": "tests/direct/test_flow.py::test_a_wins_consistently",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C83": {
+    "desc": "judged counter not increased",
+    "detail": "tests/direct/test_flow.py::test_a_wins_consistently",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C84": {
+    "desc": "judged contest keeps its slot",
+    "detail": "tests/direct/test_flow.py::test_a_wins_consistently",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C85": {
+    "desc": "round reads the wrong entry address",
+    "detail": "tests/direct/test_fixtures.py::test_scenario_end_to_end[clear_vs_dense]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C86": {
+    "desc": "round reads the wrong entry digest",
+    "detail": "tests/direct/test_fixtures.py::test_scenario_end_to_end[clear_vs_dense]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C87": {
+    "desc": "unknown contest not rejected",
+    "detail": "tests/direct/test_flow.py::test_unknown_contest_is_rejected_everywhere",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C88": {
+    "desc": "winner of A is B",
+    "detail": "tests/direct/test_fixtures.py::test_scenario_end_to_end[clear_vs_dense]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C89": {
+    "desc": "winner of B is A",
+    "detail": "tests/direct/test_fixtures.py::test_scenario_end_to_end[dense_vs_clear]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C90": {
+    "desc": "winner shown for unjudged contests",
+    "detail": "",
+    "equivalent": "the verdict field is written only together with status JUDGED, so for any other status the verdict is empty and the function returns an empty string anyway",
+    "outcome": "SURVIVED"
+  },
+  "C91": {
+    "desc": "verdict shown for unjudged contests",
+    "detail": "",
+    "equivalent": "the verdict field is written only together with status JUDGED, so for any other status it is already empty",
+    "outcome": "SURVIVED"
+  },
+  "C92": {
+    "desc": "open slots counted upwards",
+    "detail": "tests/direct/test_flow.py::test_open_limit_per_organizer_and_slot_release",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C93": {
+    "desc": "contest counter off by one",
+    "detail": "tests/direct/test_flow.py::test_ids_increase_and_stats_count_contests",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C94": {
+    "desc": "judged counter not reported",
+    "detail": "tests/direct/test_flow.py::test_a_wins_consistently",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C95": {
+    "desc": "empty slot A shows the zero address",
+    "detail": "tests/direct/test_flow.py::test_open_contest_stores_what_it_was_given",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C96": {
+    "desc": "empty slot B shows the zero address",
+    "detail": "tests/direct/test_flow.py::test_open_contest_stores_what_it_was_given",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C97": {
+    "desc": "attempts not reported",
+    "detail": "tests/direct/test_flow.py::test_fake_quote_is_not_a_win_and_is_retried",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "C98": {
+    "desc": "result hides the winner",
+    "detail": "tests/direct/test_fixtures.py::test_scenario_end_to_end[clear_vs_dense]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P01": {
+    "desc": "hash is not SHA-256",
+    "detail": "tests/direct/test_fixtures.py::test_manifest_hashes_match_the_bytes",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P02": {
+    "desc": "uppercase hex digests accepted",
+    "detail": "tests/direct/test_pure.py::test_is_sha256_hex_rejects[AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P03": {
+    "desc": "text matching becomes case-sensitive",
+    "detail": "tests/direct/test_flow.py::test_open_contest_rejects_bad_facts[[\"take",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P04": {
+    "desc": "only plain spaces are collapsed",
+    "detail": "tests/direct/test_pure.py::test_normalize_text_folds_case_and_whitespace",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P05": {
+    "desc": "normalised text is not stripped",
+    "detail": "tests/direct/test_pure.py::test_normalize_text_folds_case_and_whitespace",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P06": {
+    "desc": "http accepted",
+    "detail": "tests/direct/test_flow.py::test_bad_url_is_rejected[http://raw.example.com/a.txt]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P07": {
+    "desc": "any port accepted",
+    "detail": "tests/direct/test_flow.py::test_bad_url_is_rejected[https://example.com:8443/a]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P08": {
+    "desc": ".localhost not blocked",
+    "detail": "tests/direct/test_pure.py::test_url_rejects[https://app.localhost/x]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P09": {
+    "desc": ".local not blocked",
+    "detail": "tests/direct/test_pure.py::test_url_rejects[https://printer.local/x]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P10": {
+    "desc": ".internal not blocked",
+    "detail": "tests/direct/test_pure.py::test_url_rejects[https://svc.internal/x]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P100": {
+    "desc": "first text placed in the second slot",
+    "detail": "tests/direct/test_fixtures.py::test_scenario_end_to_end[clear_vs_dense]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P11": {
+    "desc": ".lan not blocked",
+    "detail": "tests/direct/test_pure.py::test_more_local_suffixes_are_rejected[https://router.lan/x]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P12": {
+    "desc": ".home.arpa not blocked",
+    "detail": "tests/direct/test_pure.py::test_more_local_suffixes_are_rejected[https://box.home.arpa/x]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P13": {
+    "desc": ".invalid not blocked",
+    "detail": "tests/direct/test_pure.py::test_more_local_suffixes_are_rejected[https://thing.invalid/x]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P14": {
+    "desc": "numeric last label (IPv4) accepted",
+    "detail": "tests/direct/test_flow.py::test_bad_url_is_rejected[https://127.0.0.1/a.txt]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P15": {
+    "desc": "URL length limit off by one",
+    "detail": "tests/direct/test_pure.py::test_url_length_boundary",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P16": {
+    "desc": "non-ASCII URLs accepted",
+    "detail": "tests/direct/test_pure.py::test_non_ascii_path_and_trailing_newline_are_rejected",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P17": {
+    "desc": "surrounding whitespace accepted",
+    "detail": "tests/direct/test_pure.py::test_non_ascii_path_and_trailing_newline_are_rejected",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P18": {
+    "desc": "non-string URL not rejected up front",
+    "detail": "tests/direct/test_pure.py::test_url_rejects[None]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P19": {
+    "desc": "size limit off by one",
+    "detail": "tests/direct/test_pure.py::test_decode_text_accepts_exact_limit",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P20": {
+    "desc": "BOM accepted",
+    "detail": "tests/direct/test_flow.py::test_unreadable_entry_is_a_recorded_problem_with_its_code[\\xef\\xbb\\xbfTake",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P21": {
+    "desc": "NUL accepted",
+    "detail": "tests/direct/test_flow.py::test_unreadable_entry_is_a_recorded_problem_with_its_code[Take",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P22": {
+    "desc": "blank text accepted",
+    "detail": "tests/direct/test_flow.py::test_unreadable_entry_is_a_recorded_problem_with_its_code[",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P23": {
+    "desc": "invalid UTF-8 accepted",
+    "detail": "tests/direct/test_flow.py::test_unreadable_entry_is_a_recorded_problem_with_its_code[\\xff\\xfe",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P24": {
+    "desc": "empty fact list accepted",
+    "detail": "tests/direct/test_flow.py::test_open_contest_rejects_bad_facts[[]-FACTS_COUNT]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P25": {
+    "desc": "fact list limit off by one",
+    "detail": "tests/direct/test_pure.py::test_parse_facts_accepts_boundaries",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P26": {
+    "desc": "fact minimum length off by one",
+    "detail": "tests/direct/test_pure.py::test_parse_facts_accepts_boundaries",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P27": {
+    "desc": "fact maximum length off by one",
+    "detail": "tests/direct/test_pure.py::test_parse_facts_accepts_boundaries",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P28": {
+    "desc": "duplicate facts accepted",
+    "detail": "tests/direct/test_flow.py::test_open_contest_rejects_bad_facts[[\"take",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P29": {
+    "desc": "duplicate check is case-sensitive",
+    "detail": "tests/direct/test_flow.py::test_open_contest_rejects_bad_facts[[\"take",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P30": {
+    "desc": "facts are not stripped",
+    "detail": "tests/direct/test_flow.py::test_open_contest_stores_what_it_was_given",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P31": {
+    "desc": "non-string fact not rejected",
+    "detail": "tests/direct/test_flow.py::test_open_contest_rejects_bad_facts[[1]-FACT_NOT_TEXT]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P32": {
+    "desc": "empty fact counts as found",
+    "detail": "tests/direct/test_pure.py::test_fact_empty_never_found",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P33": {
+    "desc": "no letter/digit boundary before the fact",
+    "detail": "tests/direct/test_fixtures.py::test_twelve_tablets_is_not_mistaken_for_two",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P34": {
+    "desc": "no decimal check before the fact",
+    "detail": "tests/direct/test_pure.py::test_fact_not_found[2",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P35": {
+    "desc": "decimal comma not treated like a point (before)",
+    "detail": "tests/direct/test_pure.py::test_fact_not_found[2",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P36": {
+    "desc": "decimal check before ignores that the fact starts with a digit",
+    "detail": "tests/direct/test_pure.py::test_fact_edges_around_punctuation_and_text_ends",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P37": {
+    "desc": "start-of-text guard weakened",
+    "detail": "tests/direct/test_pure.py::test_fact_edges_around_punctuation_and_text_ends",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P38": {
+    "desc": "no letter/digit boundary after the fact",
+    "detail": "tests/direct/test_pure.py::test_fact_not_found[2",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P39": {
+    "desc": "no decimal check after the fact",
+    "detail": "tests/direct/test_pure.py::test_fact_not_found[0-Dose",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P40": {
+    "desc": "decimal comma not treated like a point (after)",
+    "detail": "tests/direct/test_pure.py::test_fact_edges_around_punctuation_and_text_ends",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P41": {
+    "desc": "decimal check after ignores that the fact ends with a digit",
+    "detail": "tests/direct/test_pure.py::test_fact_edges_around_punctuation_and_text_ends",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P42": {
+    "desc": "end-of-text guard weakened",
+    "detail": "tests/direct/test_pure.py::test_fact_edges_around_punctuation_and_text_ends",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P43": {
+    "desc": "next search skips overlapping occurrences",
+    "detail": "tests/direct/test_pure.py::test_fact_edges_around_punctuation_and_text_ends",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P44": {
+    "desc": "boundary rule applies only when the fact starts with a digit",
+    "detail": "tests/direct/test_pure.py::test_fact_edges_around_punctuation_and_text_ends",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P45": {
+    "desc": "missing_facts reports found facts",
+    "detail": "tests/direct/test_fixtures.py::test_complete_fixtures_keep_every_fact",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P46": {
+    "desc": "quote minimum length off by one",
+    "detail": "tests/direct/test_pure.py::test_quote_min_length_boundary",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P47": {
+    "desc": "any quote accepted",
+    "detail": "tests/direct/test_fixtures.py::test_the_honest_quote_is_really_in_the_file_it_favours[clear_vs_dense]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P48": {
+    "desc": "non-string quote accepted",
+    "detail": "tests/direct/test_pure.py::test_quote_in_text_rejects_short_or_wrong_type[None]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P49": {
+    "desc": "extra keys in the model answer accepted",
+    "detail": "tests/direct/test_flow.py::test_malformed_model_answer_reverts_as_llm_error[answer2]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P50": {
+    "desc": "unknown winner label accepted",
+    "detail": "tests/direct/test_flow.py::test_malformed_model_answer_reverts_as_llm_error[answer0]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P51": {
+    "desc": "non-string quote in the answer accepted",
+    "detail": "tests/direct/test_flow.py::test_malformed_model_answer_reverts_as_llm_error[answer5]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P52": {
+    "desc": "quote in the answer is not truncated",
+    "detail": "tests/direct/test_pure.py::test_parse_judgement_truncates_quote",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P53": {
+    "desc": "FIRST maps to the wrong entry",
+    "detail": "tests/direct/test_fixtures.py::test_scenario_end_to_end[clear_vs_dense]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P54": {
+    "desc": "SECOND maps to the wrong entry",
+    "detail": "tests/direct/test_fixtures.py::test_scenario_end_to_end[clear_vs_dense]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P55": {
+    "desc": "TIE answer becomes UNCLEAR",
+    "detail": "tests/direct/test_fixtures.py::test_scenario_end_to_end[near_equal]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P56": {
+    "desc": "quote of A is checked in B",
+    "detail": "tests/direct/test_fixtures.py::test_scenario_end_to_end[clear_vs_dense]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P57": {
+    "desc": "quote of B is checked in A",
+    "detail": "tests/direct/test_fixtures.py::test_scenario_end_to_end[dense_vs_clear]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P58": {
+    "desc": "A's quote not checked at all",
+    "detail": "tests/direct/test_flow.py::test_fake_quote_is_not_a_win_and_is_retried",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P59": {
+    "desc": "B's quote not checked at all",
+    "detail": "tests/direct/test_pure.py::test_verify_quote_downgrades_wrong_entry_or_fake",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P60": {
+    "desc": "one failing entry disqualifies both",
+    "detail": "tests/direct/test_fixtures.py::test_scenario_end_to_end[dropped_limit]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P61": {
+    "desc": "A failing facts hands the win to A",
+    "detail": "tests/direct/test_fixtures.py::test_scenario_end_to_end[dropped_limit]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P62": {
+    "desc": "B failing facts hands the win to B",
+    "detail": "tests/direct/test_flow.py::test_other_entry_dropping_a_fact_gives_a_the_win",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P63": {
+    "desc": "unknown order results tolerated",
+    "detail": "tests/direct/test_pure.py::test_decide_rejects_missing_or_unknown_order_results_when_both_pass[None-A]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P64": {
+    "desc": "doubt in only one order does not stop a winner",
+    "detail": "tests/direct/test_flow.py::test_fake_quote_is_not_a_win_and_is_retried",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P65": {
+    "desc": "agreement check removed",
+    "detail": "tests/direct/test_flow.py::test_position_bias_is_caught_as_order_dependent",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P66": {
+    "desc": "A consistent win goes to B",
+    "detail": "tests/direct/test_fixtures.py::test_scenario_end_to_end[clear_vs_dense]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P67": {
+    "desc": "B consistent win goes to A",
+    "detail": "tests/direct/test_fixtures.py::test_scenario_end_to_end[dense_vs_clear]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P68": {
+    "desc": "agreeing TIE becomes a win",
+    "detail": "tests/direct/test_fixtures.py::test_scenario_end_to_end[near_equal]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P69": {
+    "desc": "order-dependent answer is not a tie",
+    "detail": "tests/direct/test_flow.py::test_position_bias_is_caught_as_order_dependent",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P70": {
+    "desc": "quotes kept for results that should have none",
+    "detail": "tests/direct/test_pure.py::test_build_result_keeps_quotes_only_for_consistent_wins",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P71": {
+    "desc": "q1 always kept",
+    "detail": "tests/direct/test_flow.py::test_position_bias_is_caught_as_order_dependent",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P72": {
+    "desc": "q2 always kept",
+    "detail": "tests/direct/test_flow.py::test_position_bias_is_caught_as_order_dependent",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P73": {
+    "desc": "unsorted or duplicate indexes accepted",
+    "detail": "tests/direct/test_pure.py::test_bad_index_list_alone_makes_a_forfeit_result_malformed[bad0]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P74": {
+    "desc": "booleans accepted as indexes",
+    "detail": "tests/direct/test_pure.py::test_bad_index_list_alone_makes_a_forfeit_result_malformed[bad3]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P75": {
+    "desc": "negative index accepted",
+    "detail": "tests/direct/test_pure.py::test_bad_index_list_alone_makes_a_forfeit_result_malformed[bad2]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P76": {
+    "desc": "extra or missing result keys accepted",
+    "detail": "tests/direct/test_pure.py::test_result_well_formed_rejects_shape_problems",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P77": {
+    "desc": "non-string quotes in a result accepted",
+    "detail": "tests/direct/test_pure.py::test_result_well_formed_rejects_shape_problems",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P78": {
+    "desc": "reason not tied to its verdict",
+    "detail": "tests/direct/test_pure.py::test_result_well_formed_rejects_shape_problems",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P79": {
+    "desc": "forfeit verdicts not enforced",
+    "detail": "tests/direct/test_pure.py::test_result_well_formed_rejects_verdict_that_contradicts_the_fact_check",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P80": {
+    "desc": "forfeit reasons allowed without a forfeit",
+    "detail": "tests/direct/test_pure.py::test_result_well_formed_rejects_verdict_that_contradicts_the_fact_check",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P81": {
+    "desc": "missing list of A not compared",
+    "detail": "tests/direct/test_pure.py::test_disagree_on_missing_facts",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P82": {
+    "desc": "missing list of B not compared",
+    "detail": "tests/direct/test_validator.py::test_leader_cannot_claim_a_missing_fact",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P83": {
+    "desc": "verdict not compared",
+    "detail": "tests/direct/test_pure.py::test_disagree_on_verdict",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P84": {
+    "desc": "first quote not verified",
+    "detail": "tests/direct/test_pure.py::test_disagree_when_leader_forges_a_win_with_a_fake_quote",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P85": {
+    "desc": "second quote not verified",
+    "detail": "tests/direct/test_pure.py::test_disagree_when_only_one_quote_is_real",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P86": {
+    "desc": "one genuine quote is enough",
+    "detail": "tests/direct/test_pure.py::test_disagree_when_leader_forges_a_win_with_a_fake_quote",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P87": {
+    "desc": "quotes checked in the wrong entry",
+    "detail": "tests/direct/test_fixtures.py::test_scenario_end_to_end[clear_vs_dense]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P88": {
+    "desc": "stray quotes allowed in non-decisive results",
+    "detail": "tests/direct/test_pure.py::test_disagree_when_leader_smuggles_quotes_into_a_non_decisive_result",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P89": {
+    "desc": "problem entry label not validated",
+    "detail": "tests/direct/test_pure.py::test_make_problem_rejects_unknown[C-EMPTY]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P90": {
+    "desc": "problem code not validated",
+    "detail": "tests/direct/test_pure.py::test_make_problem_rejects_unknown[A-OTHER]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P91": {
+    "desc": "malformed problem value accepted",
+    "detail": "tests/direct/test_pure.py::test_is_problem_rejects[value3]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P92": {
+    "desc": "problem entry not validated on read",
+    "detail": "tests/direct/test_pure.py::test_is_problem_rejects[value5]",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P93": {
+    "desc": "different problems agree",
+    "detail": "tests/direct/test_pure.py::test_outcomes_agree_on_equal_problems_only",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P94": {
+    "desc": "leader's problem shape not checked",
+    "detail": "tests/direct/test_pure.py::test_outcomes_agree_on_equal_problems_only",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P95": {
+    "desc": "problem vs result mismatch tolerated",
+    "detail": "",
+    "equivalent": "if exactly one side is a problem, the fall-through to rounds_agree rejects it anyway, because a problem dict is not a well-formed result; the `or` only states the intent",
+    "outcome": "SURVIVED"
+  },
+  "P96": {
+    "desc": "delimiters are not defanged",
+    "detail": "tests/direct/test_fixtures.py::test_the_injected_delimiter_is_defanged_in_the_prompt",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P97": {
+    "desc": "defang misses five-character delimiters",
+    "detail": "tests/direct/test_fixtures.py::test_the_injected_delimiter_is_defanged_in_the_prompt",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P98": {
+    "desc": "defang puts the delimiter back",
+    "detail": "tests/direct/test_fixtures.py::test_the_injected_delimiter_is_defanged_in_the_prompt",
+    "equivalent": null,
+    "outcome": "KILLED"
+  },
+  "P99": {
+    "desc": "prompt no longer marks the texts untrusted",
+    "detail": "tests/direct/test_pure.py::test_prompt_contains_both_texts_in_the_order_given",
+    "equivalent": null,
+    "outcome": "KILLED"
+  }
+}
