@@ -111,10 +111,13 @@ Verified locally: 396 Direct Mode tests pass; 198 mutants of the contract were g
 (none unexplained); the contract was accepted by the regular Studio in a trial deploy
 of an earlier version.
 
-Not verified here: behaviour with real validators and real model answers (that is what
-the live run in `docs/DEPLOYMENT.md` is for), and agreement rates across repeated runs.
-Local tests ran against an older GenVM SDK than the newest announced one; see
-`docs/DEPLOYMENT.md`. Limitations are listed in `docs/SECURITY.md`.
+Live run (see `docs/DEPLOYMENT.md`): all six scenarios were run once each on the regular Studio
+with 5 validators, and every one gave the expected verdict. One run per scenario does not measure
+how often validators would agree on repeated runs; that has not been measured.
+
+Not verified here: agreement rates over repeated runs, and behaviour on the newest announced
+GenVM version (local tests ran on an older SDK; see `docs/DEPLOYMENT.md`).
+Limitations are listed in `docs/SECURITY.md`.
 
 ## For a reviewer: fast path
 
