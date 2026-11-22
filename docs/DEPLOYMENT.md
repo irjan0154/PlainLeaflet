@@ -81,7 +81,8 @@ In every run 3 or 4 of the 5 validators voted Agree and the rest showed
 |---|---|
 | Studio / network | studio.genlayer.com, Normal (Full Consensus) |
 | Contract address | `0x5746CdD8b47B5334548900c11b2f6942F61A81C5` |
-| Explorer link | (author to paste the explorer link to this address) |
+| Explorer link | https://explorer-studio.genlayer.com/address/0x5746CdD8b47B5334548900c11b2f6942F61A81C5 |
+| Open in Studio | https://studio.genlayer.com/?import-contract=0x5746CdD8b47B5334548900c11b2f6942F61A81C5 |
 | Contract file SHA-256 | `6944d6f591549d87d6a529bc8ac07e2f97039b6b645d8b213a0d413738511715` (explorer code was not compared byte by byte) |
 | Repository commit used for fixtures | `43b99f4c7498222f46f1f7332de41d3a375afde4` (`irjan0154/PlainLeaflet`; all six raw URLs returned the expected SHA-256) |
 
@@ -92,7 +93,7 @@ In every run 3 or 4 of the 5 validators voted Agree and the rest showed
 | 3 | `near_equal` | 4 | `TIE` | `CONSISTENT_TIE` | [] / [] | `0xbd58a704...` | ACCEPTED, SUCCESS | yes |
 | 4 | `dropped_limit` | 5 | `B_WINS` | `A_FAILED_FACTS` | [1] / [] | `0xb1ef75a0...` | FINALIZED, SUCCESS | yes |
 | 5 | `twelve_tablets` | 6 | `B_WINS` | `A_FAILED_FACTS` | [0] / [] | `0x937b5d5e...` | FINALIZED, SUCCESS | yes |
-| 6 | `injection` | 7 | `B_WINS` | `CONSISTENT` | [] / [] | `0x72a4232e...` | FINALIZED, SUCCESS | yes |
+| 6 | `injection` | 7 | `B_WINS` | `CONSISTENT` | [] / [] | `0x72a4232ea841160bbe04a204de35178a8442c85f0169fd45707cdd0e7fc838d6` | FINALIZED, SUCCESS | yes |
 
 Models seen among the agreeing validators (as named in the Studio validator list):
 scenario 1 gemma, glm, mistral; scenario 2 gemini flash lite, claude sonnet; scenario 3
