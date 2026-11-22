@@ -71,26 +71,52 @@ run goes into the table.
 
 ## Live record
 
-Filled in after the live run. Empty until then.
+One run per scenario, on the regular Studio (studio.genlayer.com), mode "Normal (Full Consensus)",
+one account, contract file as packaged above. Each judge transaction ended `Result: SUCCESS` with
+consensus history `PENDING, PROPOSING, COMMITTING, REVEALING, ACCEPTED` (no extra rounds seen).
+In every run 3 or 4 of the 5 validators voted Agree and the rest showed
+"Validator execution cancelled after quorum" (cancelled, not a recorded disagreement).
 
 | Item | Value |
 |---|---|
-| Studio / network | |
-| Contract address | |
-| Explorer link | |
-| Contract file SHA-256 (matches explorer code: yes/no) | |
-| Repository commit used for fixtures | |
+| Studio / network | studio.genlayer.com, Normal (Full Consensus) |
+| Contract address | `0x5746CdD8b47B5334548900c11b2f6942F61A81C5` |
+| Explorer link | (author to paste the explorer link to this address) |
+| Contract file SHA-256 | `6944d6f591549d87d6a529bc8ac07e2f97039b6b645d8b213a0d413738511715` (explorer code was not compared byte by byte) |
+| Repository commit used for fixtures | `43b99f4c7498222f46f1f7332de41d3a375afde4` (`irjan0154/PlainLeaflet`; all six raw URLs returned the expected SHA-256) |
 
-| # | Scenario | Contest id | Verdict | Reason | `missing_a` / `missing_b` | GenVM result | Transaction link | Matches expected |
+| # | Scenario | Contest id | Verdict | Reason | `missing_a` / `missing_b` | Judge tx (prefix as seen in Studio) | Tx status when read | Matches expected |
 |---|---|---|---|---|---|---|---|---|
-| 1 | `clear_vs_dense` | | | | | | | |
-| 2 | `dense_vs_clear` | | | | | | | |
-| 3 | `near_equal` | | | | | | | |
-| 4 | `dropped_limit` | | | | | | | |
-| 5 | `twelve_tablets` | | | | | | | |
-| 6 | `injection` | | | | | | | |
+| 1 | `clear_vs_dense` | 1 | `A_WINS` | `CONSISTENT` | [] / [] | `0xc80f685d80b1dbec2dd5055758b9cfd31f234c2fb9393eba794a39be9fc88b05` | FINALIZED, SUCCESS | yes |
+| 2 | `dense_vs_clear` | 3 | `B_WINS` | `CONSISTENT` | [] / [] | `0x83deaee4...` | ACCEPTED, SUCCESS | yes |
+| 3 | `near_equal` | 4 | `TIE` | `CONSISTENT_TIE` | [] / [] | `0xbd58a704...` | ACCEPTED, SUCCESS | yes |
+| 4 | `dropped_limit` | 5 | `B_WINS` | `A_FAILED_FACTS` | [1] / [] | `0xb1ef75a0...` | FINALIZED, SUCCESS | yes |
+| 5 | `twelve_tablets` | 6 | `B_WINS` | `A_FAILED_FACTS` | [0] / [] | `0x937b5d5e...` | FINALIZED, SUCCESS | yes |
+| 6 | `injection` | 7 | `B_WINS` | `CONSISTENT` | [] / [] | `0x72a4232e...` | FINALIZED, SUCCESS | yes |
 
-Notes on runs that did not go as expected (retries, rotations, problems,
-`UNDETERMINED`):
+Models seen among the agreeing validators (as named in the Studio validator list):
+scenario 1 gemma, glm, mistral; scenario 2 gemini flash lite, claude sonnet; scenario 3
+gpt, gemini flash lite, grok; scenario 4 deepseek, qwen, minimax, gemini flash lite;
+scenario 5 gemma, grok, claude sonnet; scenario 6 grok, deepseek, mistral, gemini flash lite.
+In scenarios 4 and 5 the verdict comes from code, so the model choice does not matter there.
 
-(none recorded yet)
+What the runs show: both slot orders of the clear/dense pair give the clear text (scenarios 1 and 2);
+two near-identical texts give a tie; a missing fact and a "2 inside 12" near-miss are caught by code;
+the text containing an instruction aimed at the judge did not win. What they do not show: a single run
+per scenario says nothing about how often validators would agree on repeated runs.
+
+Notes on things that did not go smoothly (none changed a verdict):
+
+- At the start `open_contest` was sent three times by mistake. One call, with the facts typed without
+  the surrounding brackets, did not create a contest (the contest counter was 2 afterwards). The
+  duplicate, contest 2, was closed with `withdraw`. That is why the contest ids above skip 2.
+- In scenario 5 one `submit_entry` was sent with a hash typed into the `url` field. The contract
+  rejected it with `[EXPECTED] BAD_URL`, validators agreed on the rejection, the transaction ended
+  `FINALIZED` with `Result: ERROR`, and nothing was changed in the contest. The entry was then
+  submitted correctly.
+- The Studio editor logged a red `gen_getContractSchemaForCode` error (GenVM v0.2.16) when the
+  contract was opened. The contract deployed and its methods worked.
+- The quote the model chose in scenario 1 differed from the one used in the local mock; the
+  contract accepts any quote that really occurs in the favoured text.
+- The final status of the judge transactions in scenarios 2 and 3 was read while `ACCEPTED`; the
+  result was already readable with `get_result` (`status: JUDGED`).
